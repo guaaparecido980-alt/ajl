@@ -524,17 +524,22 @@
             letter-spacing: -0.02em;
         }
         .nav-logo-mark {
-            width: 48px;
-            height: 48px;
+            width: 46px;
+            height: 46px;
             background: var(--white);
-            border-radius: 11px;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 5px;
-            box-shadow: 0 6px 16px rgba(10,42,94,.18), 0 0 0 1px rgba(10,42,94,.06);
+            padding: 3px;
+            box-shadow: 0 2px 8px rgba(10,42,94,.08);
             position: relative;
             overflow: hidden;
+            transition: box-shadow var(--t-base), transform var(--t-base);
+        }
+        .nav-logo:hover .nav-logo-mark {
+            box-shadow: 0 4px 14px rgba(10,42,94,.15);
+            transform: translateY(-1px);
         }
         .nav-logo-mark img {
             width: 100%;
@@ -922,18 +927,17 @@
             pointer-events: none;
         }
         .hero-main-card-icon {
-            width: 78px;
-            height: 78px;
+            width: 76px;
+            height: 76px;
             background: var(--white);
-            border-radius: var(--r-md);
+            border-radius: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
             z-index: 1;
-            border: 1px solid rgba(255,255,255,.30);
-            box-shadow: 0 12px 32px rgba(0,0,0,.20), inset 0 1px 0 rgba(255,255,255,.6);
-            padding: 8px;
+            box-shadow: 0 8px 24px rgba(0,0,0,.25), 0 0 0 1px rgba(255,255,255,.10);
+            padding: 6px;
         }
         .hero-main-card-icon svg { width: 34px; height: 34px; color: var(--white); }
         .hero-main-card-icon img {
@@ -1208,15 +1212,15 @@
             position: absolute;
             top: var(--s-5);
             right: var(--s-5);
-            width: 64px;
-            height: 64px;
-            background: rgba(255,255,255,.92);
-            border-radius: 12px;
-            padding: 6px;
+            width: 60px;
+            height: 60px;
+            background: var(--white);
+            border-radius: 11px;
+            padding: 5px;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 8px 24px rgba(0,0,0,.20), inset 0 1px 0 rgba(255,255,255,.6);
+            box-shadow: 0 6px 20px rgba(0,0,0,.18), 0 0 0 1px rgba(255,255,255,.10);
             z-index: 2;
         }
         .sobre-visual-watermark img {
@@ -1479,6 +1483,105 @@
                 text-align: left;
             }
             .cta-inline-card .btn { width: 100%; }
+        }
+
+        /* ============================================================
+           FECHAMENTO EMOCIONAL — última chamada antes do contato
+           ============================================================ */
+        .fechamento {
+            background: var(--white);
+            padding: var(--s-9) 0;
+        }
+        .fechamento-card {
+            position: relative;
+            background: linear-gradient(135deg, var(--blue-900) 0%, #06173B 60%, #03102B 100%);
+            border-radius: var(--r-xl);
+            padding: var(--s-8) var(--s-7);
+            text-align: center;
+            overflow: hidden;
+            box-shadow: var(--shadow-2xl);
+            border: 1px solid rgba(255,255,255,.06);
+        }
+        .fechamento-glow {
+            position: absolute;
+            top: 50%; left: 50%;
+            width: 700px; height: 400px;
+            background:
+                radial-gradient(circle at 30% 50%, rgba(255,180,0,.18) 0%, transparent 55%),
+                radial-gradient(circle at 70% 50%, rgba(30,99,192,.30) 0%, transparent 55%);
+            transform: translate(-50%, -50%);
+            filter: blur(40px);
+            pointer-events: none;
+        }
+        .fechamento-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+            background-size: 48px 48px;
+            mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, #000 30%, transparent 80%);
+            -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, #000 30%, transparent 80%);
+            pointer-events: none;
+        }
+        .fechamento-content { position: relative; z-index: 2; max-width: 720px; margin: 0 auto; }
+        .fechamento-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255,180,0,.15);
+            color: var(--accent);
+            padding: 0.55rem 1.1rem;
+            border-radius: var(--r-full);
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            margin-bottom: var(--s-5);
+            border: 1px solid rgba(255,180,0,.3);
+        }
+        .fechamento-tag svg {
+            width: 14px; height: 14px;
+            color: var(--accent);
+        }
+        .fechamento-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.2rem, 5vw, 3.4rem);
+            font-weight: 800;
+            color: var(--white);
+            line-height: 1.05;
+            margin-bottom: var(--s-4);
+            letter-spacing: -0.025em;
+        }
+        .fechamento-text {
+            font-size: 1.15rem;
+            color: rgba(255,255,255,.88);
+            line-height: 1.65;
+            margin-bottom: var(--s-6);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .fechamento-text strong {
+            color: var(--accent);
+            font-weight: 700;
+        }
+        .fechamento-cta {
+            display: flex;
+            justify-content: center;
+            margin-bottom: var(--s-4);
+        }
+        .fechamento-microcopy {
+            font-size: 0.88rem;
+            color: rgba(255,255,255,.6);
+            font-weight: 600;
+            letter-spacing: 0.01em;
+        }
+
+        @media (max-width: 768px) {
+            .fechamento-card { padding: var(--s-7) var(--s-5); }
+            .fechamento { padding: var(--s-7) 0; }
         }
 
         /* ============================================================
@@ -2315,6 +2418,10 @@
             color: var(--white);
             margin-bottom: var(--s-4);
         }
+        .footer-brand .nav-logo-mark {
+            background: var(--white);
+            box-shadow: 0 0 0 1px rgba(255,255,255,.08), 0 4px 14px rgba(0,0,0,.30);
+        }
         .footer-brand .nav-logo-text small { color: rgba(255,255,255,.6); }
         .footer-brand p {
             line-height: 1.7;
@@ -2582,7 +2689,7 @@
                     </div>
 
                     <h1 class="hero-headline">
-                        Problema hidráulico em <span class="accent">Curitiba?</span> Resolva hoje com quem tem mais de 40 anos de experiência.
+                        Problema hidráulico em Curitiba? Resolva <span class="accent">HOJE</span> com quem tem mais de 40 anos de experiência.
                     </h1>
 
                     <p class="hero-sub">
@@ -2785,7 +2892,7 @@
                         <p>Instalação, manutenção e reforma de redes hidráulicas — feita por equipe que entende de obra, respeita o cronograma e entrega tudo organizado e funcionando.</p>
                         <a href="https://wa.me/5541991123366?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20de%20hidr%C3%A1ulica."
                            target="_blank" rel="noopener" class="servico-link" data-track="whatsapp_click_servico">
-                            Solicitar orçamento
+                            Solicitar orçamento agora
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                         </a>
                     </div>
@@ -2799,7 +2906,7 @@
                         <p>Redes completas de distribuição com aquecedores, registros e tubulações em PPR ou cobre. Banho forte, sem vazamento e sem aquela dor de cabeça de ter que mexer tudo de novo.</p>
                         <a href="https://wa.me/5541991123366?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20de%20%C3%A1gua%20quente%20e%20fria."
                            target="_blank" rel="noopener" class="servico-link" data-track="whatsapp_click_servico">
-                            Solicitar orçamento
+                            Solicitar orçamento agora
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                         </a>
                     </div>
@@ -2813,7 +2920,7 @@
                         <p>Instalação, limpeza e manutenção de caixas superiores e cisternas. Água limpa, sem cheiro e sem aquele susto na conta.</p>
                         <a href="https://wa.me/5541991123366?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20para%20caixa%20d%27%C3%A1gua."
                            target="_blank" rel="noopener" class="servico-link" data-track="whatsapp_click_servico">
-                            Solicitar orçamento
+                            Solicitar orçamento agora
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                         </a>
                     </div>
@@ -2827,7 +2934,7 @@
                         <p>Caixa d'água profissionalmente higienizada e reservatórios impermeabilizados de verdade. Você dorme tranquilo sabendo que sua água é segura.</p>
                         <a href="https://wa.me/5541991123366?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20de%20limpeza%20e%20impermeabiliza%C3%A7%C3%A3o."
                            target="_blank" rel="noopener" class="servico-link" data-track="whatsapp_click_servico">
-                            Solicitar orçamento
+                            Solicitar orçamento agora
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                         </a>
                     </div>
@@ -2842,7 +2949,7 @@
                         <p>Instalação e manutenção de redes de hidrantes que passam na vistoria e protegem o que importa. Nada de retrabalho ou multa do Corpo de Bombeiros.</p>
                         <a href="https://wa.me/5541991123366?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20para%20rede%20de%20inc%C3%AAndio."
                            target="_blank" rel="noopener" class="servico-link" data-track="whatsapp_click_servico">
-                            Solicitar orçamento
+                            Solicitar orçamento agora
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                         </a>
                     </div>
@@ -2856,7 +2963,7 @@
                         <p>Execução e troca de colunas verticais em prédios — sem barulho desnecessário, sem morador reclamando e com cronograma cumprido até o último andar.</p>
                         <a href="https://wa.me/5541991123366?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20de%20plumadas."
                            target="_blank" rel="noopener" class="servico-link" data-track="whatsapp_click_servico">
-                            Solicitar orçamento
+                            Solicitar orçamento agora
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                         </a>
                     </div>
@@ -2871,7 +2978,7 @@
                         <p>Encontramos o ponto exato do vazamento sem precisar quebrar a casa toda. Você economiza obra, tempo e na conta de água que estava sangrando.</p>
                         <a href="https://wa.me/5541991123366?text=Ol%C3%A1%2C%20gostaria%20de%20ajuda%20com%20vazamento."
                            target="_blank" rel="noopener" class="servico-link" data-track="whatsapp_click_servico">
-                            Solicitar orçamento
+                            Solicitar orçamento agora
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                         </a>
                     </div>
@@ -2885,7 +2992,7 @@
                         <p>Captação de água da chuva e desobstrução de redes externas. Adeus alagamento no quintal e mau cheiro vindo do esgoto.</p>
                         <a href="https://wa.me/5541991123366?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20de%20%C3%A1gua%20pluvial%20ou%20esgoto."
                            target="_blank" rel="noopener" class="servico-link" data-track="whatsapp_click_servico">
-                            Solicitar orçamento
+                            Solicitar orçamento agora
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                         </a>
                     </div>
@@ -2899,7 +3006,7 @@
                         <p>Vasos, pias, lavatórios e torneiras instalados com cuidado de quem entende de detalhe. Acabamento que valoriza a sua reforma — e ninguém vê o "remendo".</p>
                         <a href="https://wa.me/5541991123366?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20para%20instalar%20lou%C3%A7as%20e%20acabamentos."
                            target="_blank" rel="noopener" class="servico-link" data-track="whatsapp_click_servico">
-                            Solicitar orçamento
+                            Solicitar orçamento agora
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                         </a>
                     </div>
@@ -2913,7 +3020,7 @@
                         <p>Indicamos o material certo para cada aplicação — sem empurrar o mais caro nem o mais frágil. Trabalho técnico, dentro da norma e com material de procedência.</p>
                         <a href="https://wa.me/5541991123366?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20de%20tubula%C3%A7%C3%A3o."
                            target="_blank" rel="noopener" class="servico-link" data-track="whatsapp_click_servico">
-                            Solicitar orçamento
+                            Solicitar orçamento agora
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                         </a>
                     </div>
@@ -2927,7 +3034,7 @@
                         <p>Pia, vaso, ralo, tubulação e rede de esgoto. Atendimento com equipamento adequado pra resolver na hora, sem destruir o que está bem feito.</p>
                         <a href="https://wa.me/5541991123366?text=Ol%C3%A1%2C%20preciso%20de%20um%20desentupimento."
                            target="_blank" rel="noopener" class="servico-link" data-track="whatsapp_click_servico">
-                            Solicitar orçamento
+                            Solicitar orçamento agora
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                         </a>
                     </div>
@@ -2956,7 +3063,7 @@
                 <div class="cta-inline-card reveal">
                     <div class="cta-inline-text">
                         <h3>Não encontrou seu serviço? <span>Pergunte direto pra gente.</span></h3>
-                        <p>Resposta rápida no WhatsApp · Visita gratuita · Atendimento em Curitiba e região</p>
+                        <p>Resposta rápida pelo WhatsApp · Sem compromisso · Orçamento sob medida</p>
                     </div>
                     <a href="https://wa.me/5541991123366?text=Ol%C3%A1%2C%20vi%20o%20site%20da%20AJL%20Encanamentos%20e%20preciso%20de%20um%20servi%C3%A7o%20hidr%C3%A1ulico."
                        target="_blank" rel="noopener" class="btn btn-primary btn-lg btn-pulse" data-track="whatsapp_click_cta_servicos">
@@ -2973,7 +3080,7 @@
                 <div class="emergencial-content reveal">
                     <span class="emergencial-tag">
                         <span class="emergencial-tag-dot"></span>
-                        Atendimento emergencial
+                        Atendimento emergencial · Evite prejuízo maior
                     </span>
                     <h2>Problemas hidráulicos podem causar prejuízo imediato.</h2>
                     <p>
@@ -3136,7 +3243,7 @@
                 <div class="cta-inline-card reveal">
                     <div class="cta-inline-text">
                         <h3>Quer um <span>diagnóstico gratuito?</span> Mande seu caso pra gente.</h3>
-                        <p>Avaliamos no local sem custo · Você decide depois · Curitiba e região</p>
+                        <p>Avaliamos no local sem custo · Orçamento sob medida · Curitiba e região</p>
                     </div>
                     <a href="https://wa.me/5541991123366?text=Ol%C3%A1%2C%20vi%20o%20site%20da%20AJL%20Encanamentos%20e%20preciso%20de%20um%20servi%C3%A7o%20hidr%C3%A1ulico."
                        target="_blank" rel="noopener" class="btn btn-primary btn-lg btn-pulse" data-track="whatsapp_click_cta_diferenciais">
@@ -3450,6 +3557,33 @@
                         <div class="faq-answer"><div class="faq-answer-inner">
                             Trabalhamos com tubulações em PVC, CPVC, PPR, ferro galvanizado (FG) e cobre — escolhendo sempre o material mais adequado para a aplicação técnica de cada serviço.
                         </div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================ FECHAMENTO EMOCIONAL ============================ -->
+        <section class="fechamento" aria-label="Última chamada">
+            <div class="container">
+                <div class="fechamento-card reveal">
+                    <div class="fechamento-glow" aria-hidden="true"></div>
+                    <div class="fechamento-content">
+                        <span class="fechamento-tag">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            Última chamada
+                        </span>
+                        <h2 class="fechamento-title">Ainda com o problema?</h2>
+                        <p class="fechamento-text">
+                            Problemas hidráulicos não se resolvem sozinhos — e podem gerar prejuízo maior com o tempo. <strong>Fale agora com a AJL e resolva isso hoje</strong> com uma equipe experiente.
+                        </p>
+                        <div class="fechamento-cta">
+                            <a href="https://wa.me/5541991123366?text=Ol%C3%A1%2C%20vi%20o%20site%20da%20AJL%20Encanamentos%20e%20preciso%20de%20um%20servi%C3%A7o%20hidr%C3%A1ulico."
+                               target="_blank" rel="noopener" class="btn btn-primary btn-lg btn-pulse" data-track="whatsapp_click_fechamento">
+                                <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                                Chamar no WhatsApp agora
+                            </a>
+                        </div>
+                        <p class="fechamento-microcopy">Resposta rápida · Sem compromisso · Atendimento em Curitiba e região</p>
                     </div>
                 </div>
             </div>
