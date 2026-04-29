@@ -2623,6 +2623,262 @@
             }
             .reveal { opacity: 1; transform: none; }
         }
+
+        /* ============================================================
+           MOBILE FIXES — overrides finais para resolver overflow,
+           sobreposições e elementos cortados em viewport <992px
+           ============================================================ */
+        @media (max-width: 992px) {
+            /* Hero — eliminar overflow */
+            .hero-content {
+                max-width: 100%;
+                width: 100%;
+                min-width: 0;
+            }
+            .hero-sub, .hero-checks, .hero-badges, .hero-microcopy {
+                max-width: 100%;
+            }
+            .hero-inner { min-width: 0; }
+            .hero { padding-top: calc(var(--header-h) + var(--s-7)); }
+
+            /* CTA inline — empilhar e ocupar largura toda */
+            .cta-inline-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            .cta-inline-card .btn { width: 100%; }
+        }
+
+        @media (max-width: 768px) {
+            /* Container com menos padding no mobile */
+            .container { padding-left: 18px; padding-right: 18px; }
+
+            /* Hero CTA empilhado em mobile */
+            .hero-cta-row {
+                flex-direction: column;
+                align-items: stretch;
+                gap: var(--s-3);
+            }
+            .hero-cta-row .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            /* Trust pill com word-wrap pra não estourar */
+            .hero-trust {
+                white-space: normal;
+                line-height: 1.45;
+                padding: 0.6rem 0.95rem 0.6rem 0.85rem;
+            }
+            .hero-trust span:not(.hero-trust-dot) { flex: 1; }
+
+            /* Hero headline mais compacta */
+            .hero-headline { font-size: clamp(1.85rem, 7vw, 2.5rem); }
+            .hero-sub { font-size: 1rem; }
+
+            /* Hero checks 2 colunas */
+            .hero-checks {
+                gap: 0.5rem 1rem;
+            }
+            .hero-checks li {
+                font-size: 0.88rem;
+                flex: 0 0 calc(50% - 0.5rem);
+            }
+
+            /* Microcopy centralizado e legível */
+            .hero-microcopy {
+                font-size: 0.82rem;
+                flex-wrap: wrap;
+            }
+
+            /* Hero badges menores e legíveis */
+            .hero-badges {
+                grid-template-columns: repeat(2, 1fr);
+                gap: var(--s-2);
+            }
+            .hero-badge {
+                padding: 0.7rem 0.85rem;
+                font-size: 0.8rem;
+                white-space: normal;
+                line-height: 1.3;
+            }
+
+            /* Sobre — card flutuante "Cadastrada no INP" reposicionado */
+            .sobre-visual-card {
+                position: relative;
+                bottom: auto;
+                right: auto;
+                margin: var(--s-4) auto 0;
+                max-width: 90%;
+            }
+
+            /* Hero card label não pode estourar */
+            .hero-main-card-label {
+                white-space: normal;
+                font-size: 0.7rem;
+            }
+
+            /* Cards de serviço com tag não sobrepondo */
+            .servico-tag {
+                position: relative;
+                margin-top: 0;
+                margin-bottom: var(--s-3);
+            }
+
+            /* Emergencial — botões empilhados, full-width */
+            .emergencial-cta {
+                flex-direction: column;
+                width: 100%;
+            }
+            .emergencial-cta .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            /* Diferenciais — uma coluna */
+            .diferenciais-grid { grid-template-columns: 1fr; }
+            .diferencial-card,
+            .diferencial-card.is-feature { grid-column: span 1; padding: var(--s-5); }
+
+            /* Garantia — texto não estourar */
+            .garantia p, .garantia li { word-break: break-word; }
+
+            /* Contato CTAs empilhados */
+            .contato-actions {
+                flex-direction: column;
+                width: 100%;
+            }
+            .contato-actions .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            /* Contato benefits centralizado */
+            .contato-benefits {
+                justify-content: center;
+                gap: 0.5rem 1rem;
+            }
+            .contato-benefits li { font-size: 0.85rem; }
+
+            /* Fechamento CTA full-width */
+            .fechamento-cta .btn { width: 100%; justify-content: center; }
+            .fechamento-card { padding: var(--s-6) var(--s-4); }
+
+            /* Stats meta clientes empilhado */
+            .clientes-meta {
+                flex-direction: column;
+                align-items: center;
+                gap: var(--s-5);
+            }
+
+            /* Cards cliente compactos */
+            .clientes-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: var(--s-2);
+            }
+            .cliente-card {
+                padding: 0.85rem 0.9rem;
+            }
+            .cliente-card-name { font-size: 0.82rem; }
+
+            /* Garantia inner stack */
+            .garantia-inner { grid-template-columns: 1fr; }
+
+            /* WhatsApp flutuante menor e mais discreto */
+            .wa-float {
+                bottom: 16px !important;
+                right: 16px !important;
+                width: 52px !important;
+                height: 52px !important;
+            }
+            .wa-float svg {
+                width: 26px !important;
+                height: 26px !important;
+            }
+
+            /* Aumenta bottom padding nas seções pra WhatsApp não cobrir botão final */
+            .contato { padding-bottom: calc(var(--s-8) + 70px); }
+
+            /* Hero stat e floating cards reposicionados */
+            .hero-floating-card {
+                width: 90%;
+                right: 5%;
+            }
+            .hero-stat-card { width: 70%; }
+        }
+
+        @media (max-width: 540px) {
+            /* Container ainda mais apertado */
+            .container { padding-left: 14px; padding-right: 14px; }
+
+            /* Section padding menor */
+            section { padding: var(--s-7) 0; }
+
+            /* Hero headline menor */
+            .hero-headline { font-size: clamp(1.65rem, 6.5vw, 2.1rem); }
+
+            /* Trust pill mais compacta */
+            .hero-trust {
+                font-size: 0.78rem;
+                padding: 0.55rem 0.8rem 0.55rem 0.7rem;
+            }
+
+            /* Hero checks 1 coluna */
+            .hero-checks li { flex: 1 1 100%; }
+
+            /* Hero badges 1 coluna em telinha minúscula */
+            .hero-badges { grid-template-columns: 1fr; }
+
+            /* Cards cliente 1 coluna */
+            .clientes-grid { grid-template-columns: 1fr; }
+
+            /* Stats grid empilhado */
+            .stats-grid { grid-template-columns: 1fr 1fr; gap: var(--s-5); }
+
+            /* Title sections menores */
+            .section-title { font-size: clamp(1.5rem, 5.5vw, 2rem); }
+
+            /* CTA inline texto compacto */
+            .cta-inline-text h3 { font-size: 1.2rem; }
+
+            /* Fechamento texto compacto */
+            .fechamento-title { font-size: clamp(1.65rem, 6.5vw, 2.2rem); }
+            .fechamento-text { font-size: 1rem; }
+        }
+
+        /* Body proteção contra overflow horizontal global */
+        html, body { overflow-x: hidden; max-width: 100vw; }
+
+        /* Fix global: grids com min-width 0 pra não estourar em mobile */
+        @media (max-width: 768px) {
+            .sobre-inner, .sobre-content,
+            .garantia-inner, .garantia-content,
+            .emergencial-inner, .emergencial-content,
+            .contato-grid, .contato-card,
+            .hero-inner, .hero-content,
+            .servicos-grid, .servico-card,
+            .diferenciais-grid, .diferencial-card,
+            .footer-grid, .footer-brand, .footer-col {
+                min-width: 0;
+            }
+            /* Word-wrap em parágrafos pra não estourar */
+            p, h1, h2, h3, h4, li {
+                overflow-wrap: anywhere;
+                word-wrap: break-word;
+            }
+            /* Garantia botão CTA full-width */
+            .garantia .btn-blue,
+            .garantia .btn-lg {
+                width: 100%;
+                max-width: 100%;
+                white-space: normal;
+                text-align: center;
+                justify-content: center;
+            }
+            /* Nav-toggle não pode estourar */
+            .nav-toggle { flex-shrink: 0; margin-right: -8px; }
+            .nav-cta { gap: 0.4rem; }
+        }
     </style>
 </head>
 <body>
