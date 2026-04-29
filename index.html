@@ -841,6 +841,7 @@
         .hero-visual {
             position: relative;
             aspect-ratio: 1 / 1.05;
+            width: 100%;
             max-width: 540px;
             margin-left: auto;
         }
@@ -1188,6 +1189,7 @@
         .sobre-visual {
             position: relative;
             aspect-ratio: 4/5;
+            width: 100%;
             max-width: 480px;
             margin-left: auto;
         }
@@ -3804,11 +3806,29 @@
                         observer.unobserve(entry.target);
                     }
                 });
-            }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+            }, { threshold: 0.01, rootMargin: '0px 0px 200px 0px' });
 
             document.querySelectorAll('.reveal').forEach(function (el) {
                 observer.observe(el);
             });
+
+            // Fallback: garante que tudo já visível na viewport ativa imediatamente
+            // (alguns elementos com aspect-ratio/grid podem não disparar no load)
+            window.addEventListener('load', function () {
+                document.querySelectorAll('.reveal:not(.in)').forEach(function (el) {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight && rect.bottom > 0) {
+                        el.classList.add('in');
+                    }
+                });
+            });
+
+            // Fallback final: após 3 segundos, ativa tudo (proteção contra bugs)
+            setTimeout(function () {
+                document.querySelectorAll('.reveal:not(.in)').forEach(function (el) {
+                    el.classList.add('in');
+                });
+            }, 3000);
         } else {
             document.querySelectorAll('.reveal').forEach(function (el) {
                 el.classList.add('in');
