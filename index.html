@@ -30,16 +30,16 @@
     <meta name="twitter:description" content="40 anos atendendo residências, comércios, prédios e condomínios em Curitiba e região.">
 
     <!-- FAVICON -->
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/logo-32.png">
-    <link rel="icon" type="image/png" sizes="64x64" href="assets/logo-64.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/logo-180.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="logo-32.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="logo-64.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="logo-180.png">
 
     <!-- OG IMAGE -->
-    <meta property="og:image" content="https://ajlencanamentos.com.br/assets/og-image.jpg">
+    <meta property="og:image" content="https://ajlencanamentos.com.br/og-image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="AJL Encanamentos — Logo">
-    <meta name="twitter:image" content="https://ajlencanamentos.com.br/assets/og-image.jpg">
+    <meta name="twitter:image" content="https://ajlencanamentos.com.br/og-image.jpg">
 
     <!-- PRECONNECT -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -777,6 +777,31 @@
             flex-shrink: 0;
         }
 
+        .hero-checks {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.55rem 1.4rem;
+            margin-bottom: var(--s-5);
+            max-width: 580px;
+        }
+        .hero-checks li {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: var(--blue-900);
+        }
+        .hero-checks svg {
+            width: 16px; height: 16px;
+            color: #16a34a;
+            background: #DCFCE7;
+            padding: 2px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
         .hero-badges {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
@@ -1399,6 +1424,64 @@
         .servico-link svg { width: 14px; height: 14px; }
 
         /* ============================================================
+           CTA INLINE — bar entre serviços e emergencial
+           ============================================================ */
+        .cta-inline {
+            background: var(--white);
+            padding: 0 0 var(--s-7) 0;
+        }
+        .cta-inline-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: var(--s-5);
+            padding: var(--s-6) var(--s-7);
+            background: linear-gradient(135deg, var(--blue-50) 0%, #EAF2FE 100%);
+            border: 1px solid var(--blue-100);
+            border-radius: var(--r-xl);
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+        .cta-inline-card::before {
+            content: '';
+            position: absolute;
+            top: -50%; right: -10%;
+            width: 320px; height: 320px;
+            background: radial-gradient(circle, rgba(30,99,192,.14) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        .cta-inline-text { position: relative; z-index: 1; }
+        .cta-inline-text h3 {
+            font-family: var(--font-display);
+            font-size: clamp(1.4rem, 2.8vw, 1.85rem);
+            font-weight: 800;
+            color: var(--blue-900);
+            line-height: 1.2;
+            margin-bottom: 0.4rem;
+            letter-spacing: -0.015em;
+        }
+        .cta-inline-text h3 span { color: var(--blue-600); font-style: italic; }
+        .cta-inline-text p {
+            font-size: 0.95rem;
+            color: var(--gray-700);
+            font-weight: 500;
+        }
+        .cta-inline-card .btn { position: relative; z-index: 1; flex-shrink: 0; }
+
+        @media (max-width: 768px) {
+            .cta-inline-card {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: var(--s-4);
+                padding: var(--s-5);
+                text-align: left;
+            }
+            .cta-inline-card .btn { width: 100%; }
+        }
+
+        /* ============================================================
            EMERGENCIAL
            ============================================================ */
         .emergencial {
@@ -1462,6 +1545,11 @@
             opacity: 0.92;
             margin-bottom: var(--s-5);
             max-width: 540px;
+        }
+        .emergencial p strong {
+            color: var(--accent);
+            font-weight: 700;
+            opacity: 1;
         }
         .emergencial-bullets {
             list-style: none;
@@ -2434,7 +2522,7 @@
     <header class="navbar" id="navbar">
         <div class="container nav-inner">
             <a href="#hero" class="nav-logo" aria-label="AJL Encanamentos — Página inicial">
-                <span class="nav-logo-mark"><img src="assets/logo-128.png" srcset="assets/logo-128.png 1x, assets/logo-256.png 2x" alt="AJL Encanamentos" width="48" height="48" loading="eager"></span>
+                <span class="nav-logo-mark"><img src="logo-128.png" srcset="logo-128.png 1x, logo-256.png 2x" alt="AJL Encanamentos" width="48" height="48" loading="eager"></span>
                 <span class="nav-logo-text">
                     Encanamentos
                     <small>Desde 1993</small>
@@ -2455,7 +2543,7 @@
                     <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                     Ligar
                 </a>
-                <a href="https://wa.me/5541991123366?text=Ol%C3%A1%2C%20vi%20o%20site%20da%20AJL%20Encanamentos%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+                <a href="https://wa.me/5541991123366?text=Ol%C3%A1%2C%20vi%20o%20site%20da%20AJL%20Encanamentos%20e%20preciso%20de%20um%20servi%C3%A7o%20hidr%C3%A1ulico."
                    target="_blank" rel="noopener" class="btn btn-primary btn-sm" data-track="whatsapp_click_navbar">
                     <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
                     WhatsApp
@@ -2477,7 +2565,7 @@
             <a href="#faq">FAQ</a>
             <a href="#contato">Contato</a>
             <a href="tel:+5541991123366" class="btn btn-blue btn-block" style="margin-top: 1rem;">Ligar agora</a>
-            <a href="https://wa.me/5541991123366?text=Ol%C3%A1%2C%20vi%20o%20site%20da%20AJL%20Encanamentos%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+            <a href="https://wa.me/5541991123366?text=Ol%C3%A1%2C%20vi%20o%20site%20da%20AJL%20Encanamentos%20e%20preciso%20de%20um%20servi%C3%A7o%20hidr%C3%A1ulico."
                target="_blank" rel="noopener" class="btn btn-primary btn-block">Chamar no WhatsApp</a>
         </nav>
     </div>
@@ -2490,22 +2578,29 @@
                 <div class="hero-content reveal">
                     <div class="hero-trust">
                         <span class="hero-trust-dot" aria-hidden="true"></span>
-                        <span><strong>Há mais de 40 anos</strong> resolvendo problemas hidráulicos em Curitiba</span>
+                        <span><strong>Mais de 40 anos</strong> resolvendo problemas hidráulicos em Curitiba</span>
                     </div>
 
                     <h1 class="hero-headline">
-                        A hidráulica de confiança que <span class="accent">Curitiba</span> reconhece desde 1993
+                        Problema hidráulico em <span class="accent">Curitiba?</span> Resolva hoje com quem tem mais de 40 anos de experiência.
                     </h1>
 
                     <p class="hero-sub">
-                        Atendimento rápido, equipe especializada e serviço com garantia em residências, comércios e condomínios. Nós resolvemos — sem improviso, sem sujeira, sem dor de cabeça.
+                        Vazamentos, entupimentos, caixa d'água, hidráulica predial e emergências. Atendimento rápido, visita gratuita e garantia conforme o serviço.
                     </p>
 
+                    <ul class="hero-checks" aria-label="O que você ganha">
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Atendimento rápido</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Visita gratuita</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Curitiba e região</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Equipe especializada</li>
+                    </ul>
+
                     <div class="hero-cta-row">
-                        <a href="https://wa.me/5541991123366?text=Ol%C3%A1%2C%20vi%20o%20site%20da%20AJL%20Encanamentos%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+                        <a href="https://wa.me/5541991123366?text=Ol%C3%A1%2C%20vi%20o%20site%20da%20AJL%20Encanamentos%20e%20preciso%20de%20um%20servi%C3%A7o%20hidr%C3%A1ulico."
                            target="_blank" rel="noopener" class="btn btn-primary btn-lg btn-pulse" data-track="whatsapp_click_hero">
                             <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
-                            Falar agora no WhatsApp
+                            Chamar no WhatsApp agora
                         </a>
                         <a href="tel:+5541991123366" class="btn btn-outline btn-lg" data-track="phone_click_hero">
                             <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
@@ -2515,7 +2610,7 @@
 
                     <div class="hero-microcopy" aria-hidden="true">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                        Resposta rápida pelo WhatsApp · Visita gratuita · Sem compromisso
+                        Resposta rápida · Sem compromisso · Atendimento em Curitiba e região
                     </div>
 
                     <div class="hero-badges">
@@ -2545,7 +2640,7 @@
                 <div class="hero-visual reveal">
                     <div class="hero-card hero-main-card">
                         <div class="hero-main-card-icon">
-                            <img src="assets/logo-256.png" srcset="assets/logo-256.png 1x, assets/logo-512.png 2x" alt="AJL Encanamentos" width="78" height="78" loading="eager">
+                            <img src="logo-256.png" srcset="logo-256.png 1x, logo-512.png 2x" alt="AJL Encanamentos" width="78" height="78" loading="eager">
                         </div>
                         <div class="hero-main-card-content">
                             <div class="hero-main-card-label">AJL ENCANAMENTOS</div>
@@ -2644,7 +2739,7 @@
                     <div class="sobre-visual-main">
                         <div class="sobre-visual-pattern"></div>
                         <div class="sobre-visual-watermark" aria-hidden="true">
-                            <img src="assets/logo-128.png" srcset="assets/logo-128.png 1x, assets/logo-256.png 2x" alt="" width="64" height="64" loading="lazy">
+                            <img src="logo-128.png" srcset="logo-128.png 1x, logo-256.png 2x" alt="" width="64" height="64" loading="lazy">
                         </div>
                         <div class="sobre-visual-content">
                             <div>
@@ -2743,7 +2838,7 @@
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c0 5-3 7-3 11a3 3 0 0 0 6 0c0-4-3-6-3-11z"/><path d="M5 14l-2 5h4l-1 3"/><path d="M19 14l2 5h-4l1 3"/></svg>
                         </div>
                         <span class="servico-tag"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="6"/></svg>Para condomínios</span>
-                        <h3>Rede de prevenção contra incêndio</h3>
+                        <h3>Rede de prevenção contra incêndio que passa na vistoria</h3>
                         <p>Instalação e manutenção de redes de hidrantes que passam na vistoria e protegem o que importa. Nada de retrabalho ou multa do Corpo de Bombeiros.</p>
                         <a href="https://wa.me/5541991123366?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20para%20rede%20de%20inc%C3%AAndio."
                            target="_blank" rel="noopener" class="servico-link" data-track="whatsapp_click_servico">
@@ -2757,7 +2852,7 @@
                         <div class="servico-icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
                         </div>
-                        <h3>Plumadas de abastecimento e esgoto</h3>
+                        <h3>Plumadas de abastecimento e esgoto sem dor de cabeça no prédio</h3>
                         <p>Execução e troca de colunas verticais em prédios — sem barulho desnecessário, sem morador reclamando e com cronograma cumprido até o último andar.</p>
                         <a href="https://wa.me/5541991123366?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20de%20plumadas."
                            target="_blank" rel="noopener" class="servico-link" data-track="whatsapp_click_servico">
@@ -2772,7 +2867,7 @@
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
                         </div>
                         <span class="servico-tag"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="6"/></svg>Sem quebrar piso</span>
-                        <h3>Detecção precisa de vazamentos</h3>
+                        <h3>Detecção e reparo de vazamentos antes que causem prejuízo maior</h3>
                         <p>Encontramos o ponto exato do vazamento sem precisar quebrar a casa toda. Você economiza obra, tempo e na conta de água que estava sangrando.</p>
                         <a href="https://wa.me/5541991123366?text=Ol%C3%A1%2C%20gostaria%20de%20ajuda%20com%20vazamento."
                            target="_blank" rel="noopener" class="servico-link" data-track="whatsapp_click_servico">
@@ -2786,7 +2881,7 @@
                         <div class="servico-icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12c0-1 1-3 4-3s5 4 8 4 4-1 4-2"/><path d="M3 19h18M3 5h18"/></svg>
                         </div>
-                        <h3>Água pluvial e rede de esgoto externa</h3>
+                        <h3>Água pluvial e esgoto externo — adeus alagamento e mau cheiro</h3>
                         <p>Captação de água da chuva e desobstrução de redes externas. Adeus alagamento no quintal e mau cheiro vindo do esgoto.</p>
                         <a href="https://wa.me/5541991123366?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20de%20%C3%A1gua%20pluvial%20ou%20esgoto."
                            target="_blank" rel="noopener" class="servico-link" data-track="whatsapp_click_servico">
@@ -2800,7 +2895,7 @@
                         <div class="servico-icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"/><line x1="6" y1="6" x2="18" y2="6"/><line x1="6" y1="18" x2="18" y2="18"/></svg>
                         </div>
-                        <h3>Louças, torneiras e acabamentos perfeitamente alinhados</h3>
+                        <h3>Instalação de louças e torneiras sem vazamento e com acabamento profissional</h3>
                         <p>Vasos, pias, lavatórios e torneiras instalados com cuidado de quem entende de detalhe. Acabamento que valoriza a sua reforma — e ninguém vê o "remendo".</p>
                         <a href="https://wa.me/5541991123366?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20para%20instalar%20lou%C3%A7as%20e%20acabamentos."
                            target="_blank" rel="noopener" class="servico-link" data-track="whatsapp_click_servico">
@@ -2814,7 +2909,7 @@
                         <div class="servico-icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M5 12l7-7 7 7M9 19l3 3 3-3"/></svg>
                         </div>
-                        <h3>Tubulações em PVC, CPVC, PPR, FG e cobre</h3>
+                        <h3>Tubulações certas para cada obra — sem improviso, sem retrabalho</h3>
                         <p>Indicamos o material certo para cada aplicação — sem empurrar o mais caro nem o mais frágil. Trabalho técnico, dentro da norma e com material de procedência.</p>
                         <a href="https://wa.me/5541991123366?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20de%20tubula%C3%A7%C3%A3o."
                            target="_blank" rel="noopener" class="servico-link" data-track="whatsapp_click_servico">
@@ -2855,6 +2950,23 @@
             </div>
         </section>
 
+        <!-- ============================ CTA INLINE ============================ -->
+        <section class="cta-inline" aria-label="Solicitar orçamento">
+            <div class="container">
+                <div class="cta-inline-card reveal">
+                    <div class="cta-inline-text">
+                        <h3>Não encontrou seu serviço? <span>Pergunte direto pra gente.</span></h3>
+                        <p>Resposta rápida no WhatsApp · Visita gratuita · Atendimento em Curitiba e região</p>
+                    </div>
+                    <a href="https://wa.me/5541991123366?text=Ol%C3%A1%2C%20vi%20o%20site%20da%20AJL%20Encanamentos%20e%20preciso%20de%20um%20servi%C3%A7o%20hidr%C3%A1ulico."
+                       target="_blank" rel="noopener" class="btn btn-primary btn-lg btn-pulse" data-track="whatsapp_click_cta_servicos">
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                        Falar com a AJL agora
+                    </a>
+                </div>
+            </div>
+        </section>
+
         <!-- ============================ EMERGENCIAL ============================ -->
         <section class="emergencial">
             <div class="container emergencial-inner">
@@ -2863,20 +2975,21 @@
                         <span class="emergencial-tag-dot"></span>
                         Atendimento emergencial
                     </span>
-                    <h2>Cada minuto de vazamento é prejuízo na sua casa.</h2>
+                    <h2>Problemas hidráulicos podem causar prejuízo imediato.</h2>
                     <p>
-                        Vazamento, entupimento ou falha em coluna não esperam. Quanto mais você adia, maior o estrago no piso, na parede e na conta de água. A AJL atende emergências em Curitiba e região com equipe técnica pronta — para conter o problema antes que vire uma reforma.
+                        Vazamento, entupimento ou falha em coluna não esperam. Cada hora de adiamento aumenta o custo: piso, parede, conta de água, estrutura. <strong>Resolva antes que o estrago cresça.</strong>
                     </p>
-                    <ul class="emergencial-bullets" aria-label="Por que ligar agora">
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Resposta rápida no WhatsApp e telefone</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Equipe especializada com mais de 20 anos</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Visita gratuita para avaliar a urgência</li>
+                    <ul class="emergencial-bullets" aria-label="Por que agir agora">
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Vazamentos aumentam rápido — e o prejuízo junto</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Entupimentos pioram com cada uso adiado</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Falhas hidráulicas podem danificar a estrutura</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Atendimento rápido em Curitiba e região</li>
                     </ul>
                     <div class="emergencial-cta">
-                        <a href="https://wa.me/5541991123366?text=Ol%C3%A1%2C%20preciso%20de%20atendimento%20EMERGENCIAL%20da%20AJL%21"
+                        <a href="https://wa.me/5541991123366?text=Ol%C3%A1%2C%20vi%20o%20site%20da%20AJL%20Encanamentos%20e%20preciso%20de%20um%20servi%C3%A7o%20hidr%C3%A1ulico."
                            target="_blank" rel="noopener" class="btn btn-primary btn-lg btn-pulse" data-track="whatsapp_click_emergencia">
                             <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
-                            Falar com a AJL agora
+                            Falar agora no WhatsApp
                         </a>
                         <a href="tel:+5541991123366" class="btn btn-light btn-lg" data-track="phone_click_emergencia">
                             <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
@@ -3017,6 +3130,23 @@
             </div>
         </section>
 
+        <!-- ============================ CTA INLINE 2 ============================ -->
+        <section class="cta-inline cta-inline-dark" aria-label="Solicitar orçamento">
+            <div class="container">
+                <div class="cta-inline-card reveal">
+                    <div class="cta-inline-text">
+                        <h3>Quer um <span>diagnóstico gratuito?</span> Mande seu caso pra gente.</h3>
+                        <p>Avaliamos no local sem custo · Você decide depois · Curitiba e região</p>
+                    </div>
+                    <a href="https://wa.me/5541991123366?text=Ol%C3%A1%2C%20vi%20o%20site%20da%20AJL%20Encanamentos%20e%20preciso%20de%20um%20servi%C3%A7o%20hidr%C3%A1ulico."
+                       target="_blank" rel="noopener" class="btn btn-primary btn-lg btn-pulse" data-track="whatsapp_click_cta_diferenciais">
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                        Solicitar orçamento no WhatsApp
+                    </a>
+                </div>
+            </div>
+        </section>
+
         <!-- ============================ CLIENTES ============================ -->
         <section class="clientes" id="clientes">
             <div class="container">
@@ -3110,7 +3240,7 @@
                         </div>
                     </div>
 
-                    <a href="https://wa.me/5541991123366?text=Ol%C3%A1%2C%20gostaria%20de%20consultar%20a%20garantia%20do%20servi%C3%A7o%20que%20preciso."
+                    <a href="https://wa.me/5541991123366?text=Ol%C3%A1%2C%20vi%20o%20site%20da%20AJL%20Encanamentos%20e%20preciso%20de%20um%20servi%C3%A7o%20hidr%C3%A1ulico."
                        target="_blank" rel="noopener" class="btn btn-blue btn-lg" style="margin-top: var(--s-5);" data-track="whatsapp_click_garantia">
                         Consultar garantia para meu serviço
                         <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
@@ -3333,15 +3463,15 @@
                     <h2>Precisa resolver isso agora?</h2>
                     <p class="contato-sub">Vazamento, entupimento, instalação ou reforma — não importa o tamanho. A AJL está pronta para atender em Curitiba e região.</p>
                     <ul class="contato-benefits" aria-label="Benefícios">
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Visita gratuita</li>
                         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Atendimento rápido</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Garantia em todos os serviços</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Equipe especializada</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Visita gratuita</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Curitiba e região</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Orçamento sem compromisso</li>
                     </ul>
                 </div>
 
                 <div class="contato-grid">
-                    <a href="https://wa.me/5541991123366?text=Ol%C3%A1%2C%20vi%20o%20site%20da%20AJL%20Encanamentos%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+                    <a href="https://wa.me/5541991123366?text=Ol%C3%A1%2C%20vi%20o%20site%20da%20AJL%20Encanamentos%20e%20preciso%20de%20um%20servi%C3%A7o%20hidr%C3%A1ulico."
                        target="_blank" rel="noopener" class="contato-card reveal" data-track="whatsapp_click_contato">
                         <div class="contato-card-icon">
                             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884"/></svg>
@@ -3381,7 +3511,7 @@
                 </div>
 
                 <div class="contato-actions reveal">
-                    <a href="https://wa.me/5541991123366?text=Ol%C3%A1%2C%20vi%20o%20site%20da%20AJL%20Encanamentos%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+                    <a href="https://wa.me/5541991123366?text=Ol%C3%A1%2C%20vi%20o%20site%20da%20AJL%20Encanamentos%20e%20preciso%20de%20um%20servi%C3%A7o%20hidr%C3%A1ulico."
                        target="_blank" rel="noopener" class="btn btn-primary btn-lg btn-pulse" data-track="whatsapp_click_cta_final">
                         <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
                         Chamar no WhatsApp agora
@@ -3402,7 +3532,7 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <div class="nav-logo">
-                        <span class="nav-logo-mark"><img src="assets/logo-128.png" srcset="assets/logo-128.png 1x, assets/logo-256.png 2x" alt="AJL Encanamentos" width="48" height="48" loading="eager"></span>
+                        <span class="nav-logo-mark"><img src="logo-128.png" srcset="logo-128.png 1x, logo-256.png 2x" alt="AJL Encanamentos" width="48" height="48" loading="eager"></span>
                         <span class="nav-logo-text">
                             Encanamentos
                             <small>Desde 1993</small>
@@ -3461,7 +3591,7 @@
     </footer>
 
     <!-- ============================ WHATSAPP FLOATING ============================ -->
-    <a href="https://wa.me/5541991123366?text=Ol%C3%A1%2C%20vi%20o%20site%20da%20AJL%20Encanamentos%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+    <a href="https://wa.me/5541991123366?text=Ol%C3%A1%2C%20vi%20o%20site%20da%20AJL%20Encanamentos%20e%20preciso%20de%20um%20servi%C3%A7o%20hidr%C3%A1ulico."
        target="_blank" rel="noopener" class="wa-float" aria-label="Chamar no WhatsApp" data-track="whatsapp_click_floating">
         <span class="wa-float-tooltip">Fale agora pelo WhatsApp</span>
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
