@@ -2942,9 +2942,41 @@
                 text-align: center;
                 justify-content: center;
             }
-            /* Nav-toggle não pode estourar */
-            .nav-toggle { flex-shrink: 0; margin-right: -8px; }
-            .nav-cta { gap: 0.4rem; }
+            /* Nav-toggle SEMPRE visível e clicável dentro da viewport */
+            .nav-toggle {
+                flex-shrink: 0;
+                width: 40px;
+                height: 40px;
+                margin: 0;
+            }
+            .nav-cta {
+                gap: 0.4rem;
+                flex-shrink: 0;
+            }
+            /* WhatsApp botão do navbar com padding compacto pra dar espaço */
+            .nav-cta .btn.btn-primary {
+                padding: 0.5rem 0.9rem;
+                font-size: 0.78rem;
+            }
+            /* Logo encolher um pouco em telas pequenas pra abrir espaço */
+            .nav-logo { gap: 0.5rem; min-width: 0; flex: 1; min-width: 0; overflow: hidden; }
+            .nav-logo-text { min-width: 0; overflow: hidden; }
+            .nav-logo-text strong, .nav-logo span:not(.nav-logo-mark) {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                font-size: 1.05rem;
+            }
+            .nav-inner { gap: var(--s-3); }
+        }
+        @media (max-width: 400px) {
+            /* Em telas BEM pequenas (iPhone SE), esconder texto "Encanamentos" */
+            .nav-logo-text { display: none; }
+            .nav-cta .btn.btn-primary {
+                padding: 0.45rem 0.75rem;
+                font-size: 0.72rem;
+            }
+            .nav-cta .btn.btn-primary svg { width: 14px; height: 14px; }
         }
     </style>
 </head>
