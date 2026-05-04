@@ -1,0 +1,26 @@
+# robots.txt - AJL Encanamentos
+# Permite todos os mecanismos de busca
+
+User-agent: *
+Allow: /
+
+# Bloqueia diretórios sensíveis (caso existam no futuro)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
+
+# Bloqueia bots maliciosos conhecidos
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+# Sitemap
+Sitemap: https://ajlencanamentos.com.br/sitemap.xml
+
+# Host preferido
+Host: ajlencanamentos.com.br
