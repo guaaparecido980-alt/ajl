@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="theme-color" content="#0A2A5E">
+    <meta name="robots" content="index, follow">
+
+    <title>Política de Privacidade | AJL Encanamentos</title>
+    <meta name="description" content="Política de Privacidade da AJL Encanamentos em conformidade com a LGPD. Saiba como coletamos, usamos e protegemos seus dados pessoais.">
+    <link rel="canonical" href="https://ajlencanamentos.com.br/privacidade.html">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700;800&display=swap">
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4ZT1N8SEQY"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-4ZT1N8SEQY');
+    </script>
+
+    <style>
+        :root {
+            --blue-900: #0A2A5E;
+            --blue-700: #143a7a;
+            --blue-500: #4A90E2;
+            --blue-100: #E8F0FE;
+            --blue-50: #F4F8FF;
+            --gray-900: #1a1f2e;
+            --gray-700: #4a5568;
+            --gray-500: #718096;
+            --gray-300: #cbd5e0;
+            --gray-100: #f7fafc;
+            --gray-50: #fafbfc;
+            --white: #ffffff;
+            --green: #25D366;
+            --r-sm: 8px;
+            --r-md: 12px;
+            --r-lg: 20px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+            color: var(--gray-900);
+            line-height: 1.7;
+            background: var(--gray-50);
+        }
+
+        /* HEADER */
+        .pp-header {
+            background: linear-gradient(135deg, var(--blue-900) 0%, var(--blue-700) 100%);
+            padding: 24px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(10, 42, 94, 0.15);
+        }
+        .pp-header-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+        }
+        .pp-logo-wrap {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--white);
+        }
+        .pp-logo-mark {
+            width: 44px;
+            height: 44px;
+            background: var(--white);
+            border-radius: var(--r-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+            font-size: 22px;
+            color: var(--blue-900);
+        }
+        .pp-logo-text {
+            font-weight: 700;
+            font-size: 17px;
+            color: var(--white);
+            line-height: 1.2;
+        }
+        .pp-logo-text small {
+            display: block;
+            font-size: 11px;
+            opacity: 0.8;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            margin-top: 2px;
+        }
+        .pp-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 18px;
+            background: rgba(255,255,255,0.15);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 100px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: background 0.2s;
+            border: 1px solid rgba(255,255,255,0.25);
+        }
+        .pp-back:hover { background: rgba(255,255,255,0.25); }
+
+        /* HERO */
+        .pp-hero {
+            background: linear-gradient(180deg, var(--blue-50) 0%, var(--white) 100%);
+            padding: 60px 24px 40px;
+            text-align: center;
+            border-bottom: 1px solid var(--gray-300);
+        }
+        .pp-hero-inner { max-width: 800px; margin: 0 auto; }
+        .pp-eyebrow {
+            display: inline-block;
+            background: var(--blue-100);
+            color: var(--blue-900);
+            padding: 8px 18px;
+            border-radius: 100px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+        .pp-hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 44px;
+            font-weight: 700;
+            color: var(--blue-900);
+            line-height: 1.15;
+            margin-bottom: 14px;
+        }
+        .pp-hero p {
+            color: var(--gray-700);
+            font-size: 17px;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .pp-meta {
+            margin-top: 22px;
+            font-size: 13px;
+            color: var(--gray-500);
+        }
+
+        /* CONTEÚDO */
+        .pp-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 50px 24px 80px;
+        }
+        .pp-section {
+            margin-bottom: 38px;
+            padding: 28px 32px;
+            background: var(--white);
+            border-radius: var(--r-md);
+            border: 1px solid var(--gray-300);
+        }
+        .pp-section h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 26px;
+            color: var(--blue-900);
+            margin-bottom: 14px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--blue-100);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .pp-section-num {
+            display: inline-flex;
+            width: 32px;
+            height: 32px;
+            background: var(--blue-900);
+            color: var(--white);
+            border-radius: 50%;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .pp-section h3 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 17px;
+            color: var(--blue-900);
+            margin: 18px 0 8px;
+            font-weight: 700;
+        }
+        .pp-section p {
+            color: var(--gray-700);
+            margin-bottom: 14px;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        .pp-section ul, .pp-section ol {
+            padding-left: 22px;
+            margin-bottom: 14px;
+            color: var(--gray-700);
+        }
+        .pp-section li {
+            margin-bottom: 8px;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        .pp-section strong { color: var(--blue-900); font-weight: 700; }
+        .pp-section a {
+            color: var(--blue-500);
+            text-decoration: underline;
+            font-weight: 600;
+        }
+
+        .pp-callout {
+            background: var(--blue-50);
+            border-left: 4px solid var(--blue-500);
+            padding: 18px 22px;
+            border-radius: 0 var(--r-sm) var(--r-sm) 0;
+            margin: 18px 0;
+        }
+        .pp-callout strong { color: var(--blue-900); }
+
+        /* TOC */
+        .pp-toc {
+            background: var(--blue-50);
+            border-radius: var(--r-md);
+            padding: 24px 28px;
+            margin-bottom: 32px;
+            border: 1px solid var(--blue-100);
+        }
+        .pp-toc h3 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 14px;
+            color: var(--blue-900);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 14px;
+            font-weight: 700;
+        }
+        .pp-toc ol {
+            list-style: none;
+            padding: 0;
+            counter-reset: toc;
+            display: grid;
+            gap: 8px;
+        }
+        .pp-toc li {
+            counter-increment: toc;
+            margin: 0;
+            font-size: 14px;
+        }
+        .pp-toc a {
+            color: var(--blue-700);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 6px 0;
+            transition: color 0.2s;
+        }
+        .pp-toc a::before {
+            content: counter(toc, decimal-leading-zero);
+            font-weight: 700;
+            color: var(--blue-500);
+            font-size: 12px;
+            min-width: 24px;
+        }
+        .pp-toc a:hover { color: var(--blue-900); }
+
+        /* FOOTER */
+        .pp-footer {
+            background: var(--blue-900);
+            color: var(--white);
+            padding: 40px 24px 30px;
+            text-align: center;
+        }
+        .pp-footer a { color: var(--blue-100); text-decoration: none; }
+        .pp-footer a:hover { color: var(--white); }
+        .pp-footer-content { max-width: 600px; margin: 0 auto; }
+        .pp-footer-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--green);
+            color: var(--white);
+            padding: 14px 28px;
+            border-radius: 100px;
+            font-weight: 700;
+            text-decoration: none;
+            margin: 18px 0;
+            transition: transform 0.2s;
+        }
+        .pp-footer-cta:hover { transform: translateY(-1px); color: var(--white); }
+        .pp-footer-meta {
+            font-size: 13px;
+            opacity: 0.7;
+            margin-top: 16px;
+            line-height: 1.6;
+        }
+
+        /* MOBILE */
+        @media (max-width: 720px) {
+            .pp-hero { padding: 40px 20px 30px; }
+            .pp-hero h1 { font-size: 32px; }
+            .pp-hero p { font-size: 15px; }
+            .pp-content { padding: 32px 16px 60px; }
+            .pp-section { padding: 22px 20px; }
+            .pp-section h2 { font-size: 22px; gap: 10px; }
+            .pp-section-num { width: 28px; height: 28px; font-size: 13px; }
+            .pp-toc { padding: 18px 20px; }
+            .pp-back { padding: 8px 14px; font-size: 13px; }
+            .pp-logo-text { font-size: 15px; }
+            .pp-logo-text small { font-size: 10px; }
+            .pp-logo-mark { width: 40px; height: 40px; font-size: 19px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="pp-header">
+        <div class="pp-header-inner">
+            <a href="/" class="pp-logo-wrap">
+                <div class="pp-logo-mark">A</div>
+                <div class="pp-logo-text">AJL Encanamentos<small>DESDE 1993</small></div>
+            </a>
+            <a href="/" class="pp-back">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                Voltar ao site
+            </a>
+        </div>
+    </header>
+
+    <section class="pp-hero">
+        <div class="pp-hero-inner">
+            <span class="pp-eyebrow">Documento Legal · LGPD</span>
+            <h1>Política de Privacidade</h1>
+            <p>Sua privacidade é prioridade pra gente. Aqui explicamos de forma clara e direta como coletamos, usamos e protegemos seus dados quando você visita nosso site ou solicita nossos serviços.</p>
+            <div class="pp-meta">
+                <strong>Última atualização:</strong> 04 de maio de 2026<br>
+                <strong>Vigência:</strong> Esta política está em vigor desde a data acima
+            </div>
+        </div>
+    </section>
+
+    <main class="pp-content">
+
+        <div class="pp-toc">
+            <h3>📋 Índice</h3>
+            <ol>
+                <li><a href="#secao-1">Quem somos</a></li>
+                <li><a href="#secao-2">Quais dados coletamos</a></li>
+                <li><a href="#secao-3">Como usamos seus dados</a></li>
+                <li><a href="#secao-4">Cookies e tecnologias similares</a></li>
+                <li><a href="#secao-5">Compartilhamento de dados</a></li>
+                <li><a href="#secao-6">Seus direitos como titular</a></li>
+                <li><a href="#secao-7">Segurança da informação</a></li>
+                <li><a href="#secao-8">Tempo de retenção</a></li>
+                <li><a href="#secao-9">Alterações nesta política</a></li>
+                <li><a href="#secao-10">Como entrar em contato</a></li>
+            </ol>
+        </div>
+
+        <div class="pp-section" id="secao-1">
+            <h2><span class="pp-section-num">1</span>Quem somos</h2>
+            <p>A <strong>AJL Encanamentos</strong> é uma empresa de hidráulica e encanamento sediada em Curitiba/PR, atuando há mais de 40 anos no mercado. Somos a empresa responsável (controladora) pelos dados pessoais coletados neste site, conforme definido pela <strong>Lei nº 13.709/2018 — Lei Geral de Proteção de Dados (LGPD)</strong>.</p>
+            <div class="pp-callout">
+                <strong>Identificação da empresa:</strong><br>
+                AJL Encanamentos<br>
+                R. Francisco de Almeida Filho, 107 — Curitiba/PR — CEP 81270-215<br>
+                Telefone: (41) 99112-3366<br>
+                E-mail: jlencanamentos@gmail.com
+            </div>
+        </div>
+
+        <div class="pp-section" id="secao-2">
+            <h2><span class="pp-section-num">2</span>Quais dados coletamos</h2>
+            <p>Coletamos apenas os dados necessários pra atender você bem. Nada além do estritamente necessário.</p>
+
+            <h3>2.1 Dados que você nos fornece diretamente</h3>
+            <p>Quando você entra em contato conosco via WhatsApp, telefone ou e-mail, podemos coletar:</p>
+            <ul>
+                <li><strong>Nome</strong> — pra identificar você no atendimento</li>
+                <li><strong>Telefone / WhatsApp</strong> — pra retornar contato e agendar visitas</li>
+                <li><strong>E-mail</strong> — pra envio de orçamentos e comunicações</li>
+                <li><strong>Endereço do imóvel</strong> — pra realizar a visita técnica e o serviço</li>
+                <li><strong>Descrição do problema hidráulico</strong> — pra preparar o orçamento</li>
+            </ul>
+
+            <h3>2.2 Dados coletados automaticamente</h3>
+            <p>Durante sua navegação no site, podemos coletar automaticamente:</p>
+            <ul>
+                <li><strong>Endereço IP</strong> e localização aproximada (cidade/estado)</li>
+                <li><strong>Tipo de navegador e dispositivo</strong> (Safari iPhone, Chrome desktop, etc)</li>
+                <li><strong>Páginas visitadas</strong> e tempo de permanência no site</li>
+                <li><strong>Origem do acesso</strong> (Google, Facebook, link direto)</li>
+                <li><strong>Interações no site</strong> (cliques em botões, abertura de FAQ, etc)</li>
+            </ul>
+            <div class="pp-callout">
+                <strong>Não coletamos:</strong> CPF, RG, dados bancários, senhas, dados financeiros ou quaisquer dados sensíveis (religião, orientação política, dados de saúde).
+            </div>
+        </div>
+
+        <div class="pp-section" id="secao-3">
+            <h2><span class="pp-section-num">3</span>Como usamos seus dados</h2>
+            <p>Usamos seus dados pessoais apenas pelas seguintes razões legítimas:</p>
+            <ul>
+                <li><strong>Prestar o serviço solicitado</strong> — agendamento de visitas, execução de obras, garantia</li>
+                <li><strong>Comunicação direta</strong> — responder dúvidas, enviar orçamentos, confirmar agendamentos</li>
+                <li><strong>Melhorar nosso site</strong> — entender quais conteúdos são mais úteis pros visitantes</li>
+                <li><strong>Cumprir obrigações legais</strong> — emissão de notas fiscais, garantia, contratos</li>
+                <li><strong>Marketing legítimo</strong> — enviar comunicações ocasionais sobre nossos serviços (apenas se você autorizar)</li>
+            </ul>
+            <p>Em nenhuma hipótese vendemos seus dados pessoais. Em nenhuma hipótese usamos seus dados pra fins diferentes dos descritos acima sem o seu consentimento prévio.</p>
+        </div>
+
+        <div class="pp-section" id="secao-4">
+            <h2><span class="pp-section-num">4</span>Cookies e tecnologias similares</h2>
+            <p>Cookies são pequenos arquivos que sites colocam no seu navegador pra lembrar de informações entre visitas. Usamos os seguintes tipos:</p>
+
+            <h3>4.1 Cookies essenciais (sempre ativos)</h3>
+            <p>Necessários pro funcionamento básico do site, como lembrar suas preferências de cookies. Não precisam de consentimento.</p>
+
+            <h3>4.2 Cookies de análise</h3>
+            <p>Usamos o <strong>Google Analytics 4 (GA4)</strong> pra entender como nosso site está sendo usado, quais páginas geram mais interesse e como podemos melhorar a experiência. Esses dados são tratados de forma agregada e anônima.</p>
+
+            <h3>4.3 Como gerenciar cookies</h3>
+            <p>Você pode aceitar ou recusar cookies não essenciais no banner que aparece ao acessar nosso site pela primeira vez. Também pode limpar os cookies a qualquer momento nas configurações do seu navegador.</p>
+            <div class="pp-callout">
+                <strong>Importante:</strong> Recusar cookies de análise não impede você de navegar normalmente no site, apenas reduz nossa capacidade de melhorar a experiência baseada em dados de uso.
+            </div>
+        </div>
+
+        <div class="pp-section" id="secao-5">
+            <h2><span class="pp-section-num">5</span>Compartilhamento de dados</h2>
+            <p>Não compartilhamos seus dados pessoais com terceiros, exceto quando estritamente necessário e nas seguintes situações:</p>
+            <ul>
+                <li><strong>Prestadores de serviço essenciais</strong> — Google (hospedagem do GA4), provedores de e-mail e WhatsApp (Meta), GitHub Pages (hospedagem do site). Todos sob contratos de confidencialidade ou políticas próprias de proteção de dados.</li>
+                <li><strong>Obrigação legal</strong> — quando exigido por autoridade competente (Polícia, Ministério Público, decisão judicial)</li>
+                <li><strong>Defesa em processos</strong> — em caso de litígio, podemos compartilhar dados com nossos advogados</li>
+            </ul>
+            <p>Nossos clientes (condomínios, empresas, residências atendidas) <strong>nunca</strong> têm seus dados compartilhados publicamente sem autorização expressa. Por isso adotamos a prática de não nominar clientes em nosso histórico público de atendimento.</p>
+        </div>
+
+        <div class="pp-section" id="secao-6">
+            <h2><span class="pp-section-num">6</span>Seus direitos como titular</h2>
+            <p>A LGPD garante uma série de direitos sobre seus dados pessoais. Você pode, a qualquer momento:</p>
+            <ul>
+                <li><strong>Confirmar</strong> a existência de tratamento de dados pela AJL Encanamentos</li>
+                <li><strong>Acessar</strong> os dados que temos sobre você</li>
+                <li><strong>Corrigir</strong> dados incompletos, inexatos ou desatualizados</li>
+                <li><strong>Solicitar a anonimização ou eliminação</strong> de dados desnecessários ou tratados em desconformidade</li>
+                <li><strong>Solicitar a portabilidade</strong> dos dados a outro fornecedor</li>
+                <li><strong>Revogar consentimento</strong> dado anteriormente</li>
+                <li><strong>Apresentar reclamação</strong> à Autoridade Nacional de Proteção de Dados (ANPD)</li>
+            </ul>
+            <p>Pra exercer qualquer desses direitos, basta entrar em contato pelo e-mail <a href="mailto:jlencanamentos@gmail.com">jlencanamentos@gmail.com</a> ou WhatsApp <a href="https://wa.me/5541991123366">(41) 99112-3366</a>. Respondemos em até 15 dias úteis.</p>
+        </div>
+
+        <div class="pp-section" id="secao-7">
+            <h2><span class="pp-section-num">7</span>Segurança da informação</h2>
+            <p>Adotamos medidas técnicas e organizacionais pra proteger seus dados contra acesso não autorizado, perda ou vazamento:</p>
+            <ul>
+                <li><strong>HTTPS / SSL</strong> — toda comunicação com nosso site é criptografada</li>
+                <li><strong>Acesso restrito</strong> — apenas profissionais autorizados acessam dados de clientes</li>
+                <li><strong>Hospedagem segura</strong> — utilizamos infraestrutura GitHub Pages com proteção contra ataques</li>
+                <li><strong>Mensagens via WhatsApp e e-mail</strong> — protegidos por criptografia ponta a ponta (WhatsApp) e protocolos seguros (e-mail)</li>
+            </ul>
+            <p>Apesar de todos os esforços, nenhum sistema é 100% à prova de falhas. Em caso de incidente de segurança que possa causar risco aos seus direitos, comunicaremos a você e à ANPD conforme exige a lei.</p>
+        </div>
+
+        <div class="pp-section" id="secao-8">
+            <h2><span class="pp-section-num">8</span>Tempo de retenção</h2>
+            <p>Mantemos seus dados pessoais apenas pelo tempo necessário pra atender às finalidades descritas:</p>
+            <ul>
+                <li><strong>Dados de contato e atendimento:</strong> 5 anos após o último serviço prestado (período de garantia + obrigações fiscais)</li>
+                <li><strong>Dados de navegação no site (Google Analytics):</strong> 14 meses (configuração padrão)</li>
+                <li><strong>Mensagens de WhatsApp e e-mail:</strong> mantidas conforme política do provedor (Meta, Google)</li>
+                <li><strong>Dados sob obrigação legal:</strong> conforme prazo determinado pela legislação aplicável</li>
+            </ul>
+            <p>Após esses prazos, os dados são anonimizados ou excluídos definitivamente.</p>
+        </div>
+
+        <div class="pp-section" id="secao-9">
+            <h2><span class="pp-section-num">9</span>Alterações nesta política</h2>
+            <p>Esta política pode ser atualizada periodicamente pra refletir mudanças em nossas práticas, na legislação ou em recomendações de boas práticas de proteção de dados.</p>
+            <p>Quando atualizarmos esta política, mudaremos a data de "Última atualização" no topo deste documento. Em caso de alterações significativas, comunicaremos diretamente os clientes com cadastro ativo.</p>
+        </div>
+
+        <div class="pp-section" id="secao-10">
+            <h2><span class="pp-section-num">10</span>Como entrar em contato</h2>
+            <p>Pra dúvidas, sugestões ou exercer qualquer direito relacionado aos seus dados pessoais, entre em contato:</p>
+            <div class="pp-callout">
+                <strong>📞 Telefone / WhatsApp:</strong> <a href="https://wa.me/5541991123366">(41) 99112-3366</a><br>
+                <strong>📧 E-mail:</strong> <a href="mailto:jlencanamentos@gmail.com">jlencanamentos@gmail.com</a><br>
+                <strong>📍 Endereço:</strong> R. Francisco de Almeida Filho, 107 — Curitiba/PR — CEP 81270-215<br>
+                <strong>⏰ Horário:</strong> Segunda a sábado, das 8h às 18h
+            </div>
+            <p>Pra reclamações relacionadas à LGPD, você também pode entrar em contato com a Autoridade Nacional de Proteção de Dados (ANPD) através de <a href="https://www.gov.br/anpd" target="_blank" rel="noopener">gov.br/anpd</a>.</p>
+        </div>
+
+    </main>
+
+    <footer class="pp-footer">
+        <div class="pp-footer-content">
+            <p>Precisa de hidráulica em Curitiba? Fale agora com a AJL.</p>
+            <a href="https://wa.me/5541991123366?text=Ol%C3%A1%2C%20vim%20do%20site%20da%20AJL" class="pp-footer-cta" target="_blank" rel="noopener">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                Chamar no WhatsApp
+            </a>
+            <p class="pp-footer-meta">
+                © 2026 AJL Encanamentos · Todos os direitos reservados<br>
+                R. Francisco de Almeida Filho, 107 — Curitiba/PR<br>
+                <a href="/">← Voltar para o site principal</a>
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
